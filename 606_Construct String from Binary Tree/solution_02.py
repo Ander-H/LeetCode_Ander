@@ -24,3 +24,6 @@ class Solution:
         else:
             return str(t.val) + '(' + self.tree2str(t.left) + ')' + '(' + self.tree2str(t.right) + ')'
 
+# a = TreeNode(2)
+# b = TreeNode(2)
+# print(a == b)
