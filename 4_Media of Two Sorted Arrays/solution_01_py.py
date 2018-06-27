@@ -17,10 +17,13 @@ class Solution:
             i = int((imin + imax) / 2)
             j = half_len - i
             if i < len(nums1) and nums2[j-1] > nums1[i]:
+                # i is too small, must increase it
                 imin = i + 1
             elif i > 0 and nums1[i-1] > nums2[j]:
+                # i is too big, must decrease it
                 imax = i - 1
             else:
+                # i is perfect
                 if i == 0:
                     max_of_left = nums2[j-1]
                 elif j == 0:
