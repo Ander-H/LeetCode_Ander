@@ -13,10 +13,13 @@ class Solution:
         imax = len(nums1)
         m, n = len(nums1), len(nums2)
         half_len = int((m + n + 1) / 2)
+        # 根据 nums1 进行切， nums2 要切的个数随之进行 half_len - i
+        # i是 nums1 切割的位置
         while imin <= imax:
             i = int((imin + imax) / 2)
             j = half_len - i
             if i < len(nums1) and nums2[j-1] > nums1[i]:
+                # 说明此时nums1的切割位置i不合适，imin最起码要从i+1位置开始
                 # i is too small, must increase it
                 imin = i + 1
             elif i > 0 and nums1[i-1] > nums2[j]:
@@ -41,7 +44,16 @@ class Solution:
                     min_of_right = min(nums1[i], nums2[j])
                 return (max_of_left + min_of_right) / 2
 
-nums1 = [1, 2]
-nums2 = [3, 4]
+
+# nums1 = [1, 2]
+# nums2 = [3, 4]
+
+# nums1 = [6, 7, 8, 9, 10]
+# nums2 = [1, 2, 3, 4, 5]
+
+nums1 = [5, 7, 8, 9, 10]
+nums2 = [1, 2, 3, 4, 6]
+
+
 aa = Solution().findMedianSortedArrays(nums1, nums2)
 print(aa)
