@@ -1,3 +1,9 @@
+"""
+自己写的，不对
+异或运算并不等同与加法运算
+"""
+
+
 class Solution:
     def singleNumber(self, nums):
         """
